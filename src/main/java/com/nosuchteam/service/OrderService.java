@@ -10,7 +10,7 @@ import com.nosuchteam.bean.RequestList;
  * 9:55
  */
 public interface OrderService {
-    Order findOrder();
+    Order findOrder(String orderId);
     OrderJson findOrderByJson(RequestList requestList);
 
     int inserOrder(Order order);
@@ -18,4 +18,6 @@ public interface OrderService {
     int updateByPrimaryKeySelective(Order order);
 
     int deleteByPrimaryKey(String ids);
+
+    Order findByPrimaryKey(String orderId);
 }

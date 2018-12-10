@@ -33,4 +33,6 @@ public interface OrderMapper {
     List<Order> findOrderList(@Param("limit") Integer row, @Param("offset") Integer offset);
     @Select("select count(*) from `c_order`;")
     int findTotalOrder();
+
+    Order findOrder(String orderId);
 }

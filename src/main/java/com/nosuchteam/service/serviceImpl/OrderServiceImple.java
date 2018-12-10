@@ -19,8 +19,8 @@ import java.util.List;
 public class OrderServiceImple implements OrderService {
     @Autowired
     OrderMapper orderMapper;
-    public Order findOrder() {
-        return orderMapper.findOrderById();
+    public Order findOrder(String orderId) {
+        return orderMapper.findOrder(orderId);
     }
 
     public OrderJson findOrderByJson(RequestList requestList) {
@@ -42,5 +42,9 @@ public class OrderServiceImple implements OrderService {
 
     public int deleteByPrimaryKey(String ids) {
         return orderMapper.deleteByPrimaryKey(ids);
+    }
+
+    public Order findByPrimaryKey(String orderId) {
+        return orderMapper.selectByPrimaryKey(orderId);
     }
 }

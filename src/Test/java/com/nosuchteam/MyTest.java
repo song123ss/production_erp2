@@ -63,4 +63,9 @@ public class MyTest {
 
 
     }
+    @Test
+    public void test6(){
+        Order order = orderMapper.findOrder("123457");
+        Assert.assertNotNull(order);
+    }
 }

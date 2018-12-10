@@ -72,5 +72,11 @@ public class findController {
         }
         return null;
     }
+    @RequestMapping("Order/get/{orderId}")
+    @ResponseBody
+    public Order getOrder(@PathVariable("orderId") String orderId){
+        Order byPrimaryKey = orderService.findOrder(orderId);
+        return byPrimaryKey;
+    }
 }
 

@@ -349,4 +349,13 @@ unit,c.image,c.file,c.status
     left join `product` on c.product_id=product.product_id
     limit #{limit} offset #{offset};
     </select>
+
+  <select id="findOrder" resultMap="BaseResultMap1">
+    select
+    c.order_id,c.custom_id,c.product_id,c.order_date,c.request_date,c.note,c.quantity,c.unit_price,c.
+unit,c.image,c.file,c.status
+    from c_order c left join `custom` on c.custom_id=custom.custom_id
+    left join `product` on c.product_id=product.product_id
+    where c.order_id=#{aaa};
+    </select>
 </mapper>
